@@ -39,6 +39,7 @@ body {
 .todoapp {
   margin: 150px 0 50px 0;
   position: relative;
+  background: #333;
   border: 5px solid #333;
   border-radius: 10px;
   box-shadow: 0px 20px 40px rgba(0,0,0,0.8);
@@ -83,8 +84,7 @@ body {
   width: 100%;
   background: orange;
   border: none;
-  border-bottom: 5px solid #333;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px;
   box-shadow: inset 0px -5px 10px rgba(0,0,0,0.5);
 }
 
@@ -93,6 +93,8 @@ body {
 .main {
   z-index: 2;
   position: relative;
+  background: white;
+  border-radius: 5px;
 }
 
 .todo-list {
@@ -106,12 +108,12 @@ body {
   color: gray;
   list-style: none;
   background: white;
+  border-radius: 5px;
 }
 
-.todo-list li:last-child {
-  border-radius: 0px 0px 5px 5px;
+.todo-list li:first-child {
+  margin-top: 5px;
 }
-
 
 .todo-list li .toggle {
   text-align: center;
