@@ -1,3 +1,175 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+body {
+  margin: 0px auto;
+  padding: 0px;
+  min-width: 300px;
+  max-width: 600px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  line-height: 20px;
+  color: white;
+  background: url('bg.png') center fixed;
+  background-size: cover;
+}
+
+ /* header */
+
+:focus {
+  outline: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.todoapp {
+  margin: 150px 0 50px 0;
+  position: relative;
+  border: 5px solid #333;
+  border-radius: 10px;
+  box-shadow: 0px 20px 40px rgba(0,0,0,0.8);
+}
+
+.todoapp input::-webkit-input-placeholder {
+  color: gray;
+}
+
+.todoapp input::-moz-placeholder {
+  color: gray;
+}
+
+.todoapp input::input-placeholder {
+  color: gray;
+}
+
+.todoapp h1 {
+  position: absolute;
+  top: -175px;
+  width: 100%;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 100px;
+  font-weight: lighter;
+  color: orange;
+  text-align: center;  
+  text-shadow: 0px 10px 10px rgba(0,0,0,0.8);
+}
+
+.new-todo,
+.edit {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bolder;
+  line-height: inherit;
+  color: white;
+  box-sizing: border-box;
+}
+
+.new-todo {
+  padding: 20px;
+  width: 100%;
+  background: orange;
+  border: none;
+  border-bottom: 5px solid #333;
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: inset 0px -5px 10px rgba(0,0,0,0.5);
+}
+
+ /* main */
+
+.main {
+  z-index: 2;
+  position: relative;
+}
+
+.todo-list {
+  margin: 0px;
+  padding: 0px;
+}
+
+.todo-list li {
+  position: relative;
+  font-weight: bolder;
+  color: gray;
+  list-style: none;
+  background: white;
+}
+
+.todo-list li:last-child {
+  border-radius: 0px 0px 5px 5px;
+}
+
+
+.todo-list li .toggle {
+  text-align: center;
+  width: 60px;
+  /* auto, since non-WebKit browsers doesn't support input styling */
+  height: auto;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  margin: auto 0;
+  border: none; /* Mobile Safari */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.todo-list li .toggle {
+  opacity: 0;
+}
+
+.todo-list li .toggle + label {
+  /*
+    Firefox requires `#` to be escaped - https://bugzilla.mozilla.org/show_bug.cgi?id=922433
+    IE and Edge requires *everything* to be escaped to render, so we do that instead of just the `#` - https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7157459/
+  */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve" height="20px" width="20px" fill="gray"><g><circle cx="10" cy="10" r="7.5" style="fill:orange"/><path class="cls-1" d="M10,5a5,5,0,1,1-5,5,5,5,0,0,1,5-5m0-5A10,10,0,1,0,20,10,10,10,0,0,0,10,0Z"/></g></svg>');
+  background-repeat: no-repeat;
+  background-position: left 20px center;
+}
+
+.todo-list li .toggle:checked + label {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve" height="20px" width="20px" fill="lightgray"><g><path class="cls-1" d="M10,5a5,5,0,1,1-5,5,5,5,0,0,1,5-5m0-5A10,10,0,1,0,20,10,10,10,0,0,0,10,0Z"/></g></svg>');
+}
+
+.todo-list li label {
+  padding: 20px 60px;
+  display: block;
+  line-height: 1.2;
+}
+
+.todo-list li.completed label {
+  color: lightgray;
+  text-decoration: line-through;
+}
+
+ /* footer */
+
+.author {
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+}
+
+.author a {
+  font-weight: bold;
+  color: orange;
+  text-decoration: none;
+}
+
+.author a:hover {
+  color: white;
+}
